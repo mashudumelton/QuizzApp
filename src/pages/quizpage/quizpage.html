@@ -1,0 +1,504 @@
+<!--
+  Generated template for the QuizpagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <!-- <ion-title>quizpage</ion-title> -->
+  </ion-navbar>
+
+</ion-header>
+
+ 
+
+
+
+<ion-content padding>
+
+  <div *ngIf="Soccer">
+
+      <ion-input  placeholder="Name" style="text-align: center" type="text" name="name" [(ngModel)]="name" required>
+        </ion-input>
+        <br>
+
+  <button ion-button block>SOCCER QUIZ</button><br> 
+
+  <img   src="../../assets/imgs/soccer.jpg">
+
+  <h1 style="text-align: center">Question 1: Which of the following players is not Brazilian?</h1>
+  
+  <ion-list radio-group [(ngModel)]="question1">
+  <ion-item>
+    <ion-label>Eden Hazard</ion-label>
+    <ion-radio value="Eden Hazard" (ionSelect)="answers() "  (ionSelect)="answers1()"></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Gabriel Jesus</ion-label>
+  <ion-radio value="Gabriel Jesus" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Philipe Coutinho</ion-label>
+  <ion-radio value="Philipe Coutinho"></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Neymar</ion-label>
+  <ion-radio value="Neymar"></ion-radio>
+  </ion-item>
+  </ion-list>
+  
+  
+  <h1 style="text-align: center">Question 2: What national team does Mesut Ozil play for?
+  </h1>
+  <ion-list radio-group [(ngModel)]="question2">
+  <ion-item>
+    <ion-label>France</ion-label>
+    <ion-radio value="France" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Turkey</ion-label>
+  <ion-radio value="Turkey" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Netherlands</ion-label>
+  <ion-radio value="Netherlands"></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Germany</ion-label>
+  <ion-radio value="Germany" (ionSelect)="answers()"  (ionSelect)="answers1()" [disabled]="isDisabled"></ion-radio>
+  </ion-item>
+  </ion-list>
+  
+  
+  <h1 style="text-align: center">Question 3: Which of these players plays or played for Real Madrid?	
+  </h1>
+  <ion-list radio-group [(ngModel)]="question3">
+  <ion-item>
+    <ion-label>Romelu Lukaku</ion-label>
+    <ion-radio value="Romelu Lukaku" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Dani Alves</ion-label>
+  <ion-radio value="Dani Alves" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Gareth Bale</ion-label>
+  <ion-radio value="Gareth Bale" (ionSelect)="answers()"  (ionSelect)="answers1()"></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Pierre-Emerick Aubameyang</ion-label>
+  <ion-radio value="Pierre-Emerick Aubameyang" [disabled]="isDisabled"></ion-radio>
+  </ion-item>
+  </ion-list>
+  
+  
+  <h1 style="text-align: center">Question 4: Who plays for Argentina?</h1>
+  <ion-list radio-group [(ngModel)]="question4">
+  <ion-item>
+    <ion-label>Sergio Aguero</ion-label>
+    <ion-radio value="Sergio Aguero" (ionSelect)="answers()"  (ionSelect)="answers1()" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Luis Suarez</ion-label>
+  <ion-radio value="Luis Suarez" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Robert Lewandowski</ion-label>
+  <ion-radio value="Robert Lewandowski"></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Andres Iniesta</ion-label>
+  <ion-radio value="Andres Iniesta" [disabled]="isDisabled"></ion-radio>
+  </ion-item>
+  </ion-list>
+  
+  <h1 style="text-align: center">Question 5: Who plays for Sweden?
+  </h1>
+  <ion-list radio-group [(ngModel)]="question5">
+  <ion-item>
+    <ion-label>Harry Kane</ion-label>
+    <ion-radio value="Harry Kane" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Zatan Ibrahimovic</ion-label>
+  <ion-radio value="Zatan Ibrahimovic" (ionSelect)="answers()"  (ionSelect)="answers1()" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Gonzalo Higuain</ion-label>
+  <ion-radio value="Gonzalo Higuain"></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Arjen Robben</ion-label>
+  <ion-radio value="Arjen Robben" [disabled]="isDisabled"></ion-radio>
+  </ion-item>
+  </ion-list>
+  <div  id="button" style="text-align:center">
+<button ion-button (click)="Soccee()">Next</button>
+  </div>
+  </div>
+
+  <div *ngIf="Animal">
+
+    <button ion-button block>ANIMAL QUIZ</button><br> 
+
+ <img src="../../assets/imgs/AnimalQuizTeaser.jpg">
+
+  <h1 style="text-align: center">Question 6: What is the fatest bird in the air</h1>
+  <ion-list radio-group [(ngModel)]="question6">
+  <ion-item>
+    <ion-label>Ruby Throated Hummingbird</ion-label>
+    <ion-radio value="Ruby Throated Hummingbird" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>North Africa Ostrich</ion-label>
+  <ion-radio value="North Africa Ostrich" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Red Billed Quelea</ion-label>
+  <ion-radio value="Red Billed Quelea"></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Peregrine falcon</ion-label>
+  <ion-radio value="Peregrine falcon" (ionSelect)="answers()"  (ionSelect)="answers2()" ></ion-radio>
+  </ion-item>
+  </ion-list>
+  
+  
+  <h1 style="text-align: center">Question 7: How many stomachs cow have </h1>
+  
+  <ion-list radio-group [(ngModel)]="question7">
+  
+  <ion-item>
+  <ion-label>1</ion-label>
+  <ion-radio value="1" checked></ion-radio>
+  </ion-item>
+  
+  <ion-item>
+  <ion-label>2</ion-label>
+  <ion-radio value="2" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>3</ion-label>
+  <ion-radio value="3"></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>4</ion-label>
+  <ion-radio value="4" (ionSelect)="answers()"  (ionSelect)="answers2()"></ion-radio>
+  </ion-item>
+  </ion-list>
+  
+  
+  <h1 style="text-align: center">Question 8: What is the largest frog</h1>
+  <ion-list radio-group (click)="event1()" [(ngModel)]="question8">
+  <ion-item>
+      <ion-label>Cane Toard</ion-label>
+      <ion-radio value="Cane Toard" checked></ion-radio>
+    </ion-item>
+  <ion-item>
+      <ion-label>North America Bullfrog</ion-label>
+      <ion-radio value="North America Bullfro" checked></ion-radio>
+    </ion-item>
+  <ion-item>
+    <ion-label>African Goliath Frog</ion-label>
+    <ion-radio value="African Goliath Frog" (ionSelect)="answers()"  (ionSelect)="answers2()"checked></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>Poison Dart Frog</ion-label>
+    <ion-radio value="Poison Dart Frog"></ion-radio>
+  </ion-item>
+  
+  </ion-list>
+  
+  <h1 style="text-align: center">Question 9: What bird has the fatest wimg beat?</h1>
+  <ion-list radio-group [(ngModel)]="question9">
+  <ion-item>
+    <ion-label>Albatross</ion-label>
+    <ion-radio value="Albatross" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Ruby Throted Hummingbird</ion-label>
+  <ion-radio value="Ruby Throted Hummingbird" (ionSelect)="answers()"  (ionSelect)="answers2()"checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Arctic Tern</ion-label>
+  <ion-radio value="Arctic Tern"></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Ruppells Vulture</ion-label>
+  <ion-radio value="Ruppells Vulture" [disabled]="isDisabled"></ion-radio>
+  </ion-item>
+  </ion-list>
+  
+  <h1 style="text-align: center">Question 10: What is the longest snake</h1>
+  <ion-list radio-group [(ngModel)]="question10">
+  <ion-item>
+  <ion-label>Anaconda</ion-label>
+  <ion-radio value="Anaconda" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>Reticulated python</ion-label>
+  <ion-radio value="Reticulated python" (ionSelect)="answers()"  (ionSelect)="answers2()"></ion-radio>
+  </ion-item>
+  
+  <ion-item>
+  <ion-label>Green tree snake</ion-label>
+  <ion-radio value="Green tree snake" ></ion-radio>
+  </ion-item>
+  
+  <ion-item>
+  <ion-label>Corn snake</ion-label>
+  <ion-radio value="Corn snake" ></ion-radio>
+  </ion-item>
+  
+  </ion-list>
+  <div  id="button" style="text-align:center">
+  <button ion-button (click)="amima()">Next</button>
+  </div>
+  </div>
+ 
+  <div *ngIf="Mathematics">
+  <button ion-button block>MATHEMATICS QUIZ</button><br> 
+<img src="../../assets/imgs/maths.jpg"> 
+  <h1 style="text-align: center">Question 11: Calculate 10 + 2 =</h1>
+  <ion-list radio-group [(ngModel)]="question11">
+  <ion-item>
+    <ion-label>36</ion-label>
+    <ion-radio value="36" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>27</ion-label>
+  <ion-radio value="27" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>13</ion-label>
+  <ion-radio value="13"></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>12</ion-label>
+  <ion-radio value="12" (ionSelect)="answers()"  (ionSelect)="answers3()" ></ion-radio>
+  </ion-item>
+  </ion-list>
+  
+  
+  <h1 style="text-align: center">Question 12: Calculate 19 + 3 =</h1>
+  
+  <ion-list radio-group [(ngModel)]="question12">
+  
+  <ion-item>
+  <ion-label>25</ion-label>
+  <ion-radio value="25" checked></ion-radio>
+  </ion-item>
+  
+  <ion-item>
+  <ion-label>20</ion-label>
+  <ion-radio value="20" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>25</ion-label>
+  <ion-radio value="25"></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>22</ion-label>
+  <ion-radio value="22" (ionSelect)="answers()"  (ionSelect)="answers3()"></ion-radio>
+  </ion-item>
+  </ion-list>
+  
+  
+  <h1 style="text-align: center">Question 13:Calculate 1000 - 241 </h1>
+  <ion-list radio-group (click)="event1()" [(ngModel)]="question13">
+  <ion-item>
+      <ion-label>17102</ion-label>
+      <ion-radio value="17102" checked></ion-radio>
+    </ion-item>
+  <ion-item>
+      <ion-label>71000</ion-label>
+      <ion-radio value="7100" checked></ion-radio>
+    </ion-item>
+  <ion-item>
+    <ion-label>759</ion-label>
+    <ion-radio value="759" (ionSelect)="answers()"  (ionSelect)="answers3()"checked></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>7000</ion-label>
+    <ion-radio value="7000"></ion-radio>
+  </ion-item>
+  
+  </ion-list>
+  
+  <h1 style="text-align: center">Question 14: Calculate 18 * 19</h1>
+  <ion-list radio-group [(ngModel)]="question14">
+  <ion-item>
+    <ion-label>330</ion-label>
+    <ion-radio value="330" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>342</ion-label>
+  <ion-radio value="342" (ionSelect)="answers()"  (ionSelect)="answers3()"checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>90</ion-label>
+  <ion-radio value="90"></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>222</ion-label>
+  <ion-radio value="222" [disabled]="isDisabled"></ion-radio>
+  </ion-item>
+  </ion-list>
+  
+  <h1 style="text-align: center">Question 15: Calculate 35 * 14</h1>
+  <ion-list radio-group [(ngModel)]="question15">
+  <ion-item>
+  <ion-label>380</ion-label>
+  <ion-radio value="380" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>490</ion-label>
+  <ion-radio value="490" (ionSelect)="answers()"  (ionSelect)="answers3()"></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>300</ion-label>
+  <ion-radio value="300" ></ion-radio>
+  </ion-item>
+  <ion-item>
+  <ion-label>420</ion-label>
+  <ion-radio value="420" ></ion-radio>
+  </ion-item>
+  </ion-list>
+  <div  id="button" style="text-align:center">
+  <button ion-button (click)="mathe()">Submit</button>
+  </div>
+  </div>
+
+  
+   <div *ngIf="results">
+    <p>{{name}}</p>
+
+
+    <table align=center>
+      <tr>
+          <th>SOCCER QUIZ RESULTS</th>
+         
+       
+      </tr>
+      <tr>
+         <td> 
+            <p>Question 1 Your Answer Is {{question1}}<br>
+              Answer Is Eden Hazard </p><br>
+              <p>Question 2 Your Answer Is {{question2}}<br>
+              Answer Is Germany </p><br>
+              <p>Question 3 Your Answer Is {{question3}}<br>
+              Answer Is Gareth Bale </p><br>
+              <p>Question 4 Your Answer Is {{question4}}<br>
+              Answer Is Sergio Aguero</p> <br>
+              <p>Question 5 Your Answer Is {{question5}}<br>
+              Answer Is Zatan Ibrahimovic </p><br>
+          </td>
+          </tr>
+          <p><font size="8"> {{total1}} / 5</font></p>
+        </table>       <br>
+     
+
+        <br>
+
+          <table align=center>
+             <th>ANIMAL QUIZ RESULTS</th>
+           <tr>
+           <td> 
+    <p>Question 6 Your Answer Is {{question6}}<br>
+      Answer Is Peregrine falcon </p><br>
+      <p>Question 7 Your Answer Is {{question7}}<br>
+      Answer Is 4 </p><br>
+      <p>Question 8 Your Answer Is {{question8}}<br>
+      Answer Is Africa Goliath Frog </p><br>
+      <p>Question 9 Your Answer Is {{question9}}<br>
+      Answer Is Ruby Throted Hummingbird </p><br>
+      <p>Question 10 Your Answer Is {{question10}}<br>
+      Answer Is Reticulated python </p><br>
+            </td>
+            </tr>
+            <p> <font size="8"> {{total2}} / 5</font></p>
+</table>  <br>  
+
+            <br>
+          <table align=center>
+              <th>MATHEMATICS QUIZ RESLUTS</th> 
+              <tr>
+            <td>
+                <p>Question 11 Your Answer Is {{question11}}<br>
+                  Answer Is 12 </p><br>
+                  <p>Question 12 Your Answer Is {{question12}}<br>
+                  Answer Is 22</p> <br>
+                  <p>Question 13 Your Answer Is {{question13}}<br>
+                  Answer Is 759</p> <br>
+                  <p>Question 14 Your Answer Is:{{question}}<br>
+                  Answer Is 342  </p><br>
+                  <p>Question 15 Your Answer Is {{question10}}<br>
+                  Answer Is 490 </p><br>
+              </td> 
+              
+        </tr>
+        <p> <font size="8"> {{total3}} / 5</font></p>
+    </table><br>
+  
+    <br>
+    <hr>
+    <p><br><font size="8"> Total Score Is {{total}}  / 15</font></p>
+
+    <p>Thank You For Participating</p>
+    
+    <div  id="button" style="text-align:center">
+        <button ion-button (click)= "Cancel()" >Cancel</button><br> 
+      </div>
+   </div>
+
+
+
+
+
+  <!-- 
+      <p>{{name}}</p>
+
+      <P>SOCCER QUIZ RESULTS</P>
+      <p>Question 1 Your Answer Is {{question1}}<br>
+      Answer Is Eden Hazard </p><br>
+      <p>Question 2 Your Answer Is {{question2}}<br>
+      Answer Is Germany </p><br>
+      <p>Question 3 Your Answer Is {{question3}}<br>
+      Answer Is Gareth Bale </p><br>
+      <p>Question 4 Your Answer Is {{question4}}<br>
+      Answer Is Sergio Aguero</p> <br>
+      <p>Question 5 Your Answer Is {{question5}}<br>
+      Answer Is Zatan Ibrahimovic </p><br>
+
+      <P>ANIMAL QUIZ RESULTS</P>
+
+      <p>Question 6 Your Answer Is {{question6}}<br>
+      Answer Is Peregrine falcon </p><br>
+      <p>Question 7 Your Answer Is {{question7}}<br>
+      Answer Is 4 </p><br>
+      <p>Question 8 Your Answer Is {{question8}}<br>
+      Answer Is Africa Goliath Frog </p><br>
+      <p>Question 9 Your Answer Is {{question9}}<br>
+      Answer Is Ruby Throted Hummingbird </p><br>
+      <p>Question 10 Your Answer Is {{question10}}<br>
+      Answer Is Reticulated python </p><br>
+
+      <p>ADDITION QUIZ</p>
+      <p>Question 11 Your Answer Is {{question11}}<br>
+      Answer Is 12 </p><br>
+      <p>Question 12 Your Answer Is {{question12}}<br>
+      Answer Is 22</p> <br>
+      <p>Question 13 Your Answer Is {{question13}}<br>
+      Answer Is 759</p> <br>
+      <p>Question 14 Your Answer Is:{{question}}<br>
+      Answer Is 342  </p><br>
+      <p>Question 15 Your Answer Is {{question10}}<br>
+      Answer Is 490 </p><br>
+
+      <p>Your Answered  {{total}} Questions Correctly Out Of 15</p>
+      <p>Thank You For Participating</p> 
+      </div>  -->
+
+</ion-content>
